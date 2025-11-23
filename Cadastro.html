@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Portal do Proponente Cultural - FUNDARPE</title>
+	<link rel="stylesheet" href="css/Cadastro.css">
+</head>
+
+<body>
+<header>Portal do Proponente Cultural - FUNDARPE</header>
+
+<main>
+  
+	<section id="cadastro-pleito">
+	<h2>Cadastro de Pleito</h2>
+	<form id="form-pleito">
+
+<fieldset>
+        <legend>1. Dados Básicos</legend>
+
+        <label for="titulo">Título do Projeto: *(Obrigatório)*</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="proponente">Nome/Razão Social: *(Obrigatório)*</label>
+        <input type="text" id="proponente" name="proponente" required>
+
+        <label for="categoria">Categoria Cultural: *(Obrigatório)*</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecione...</option>
+          <option value="musica">Música</option>
+          <option value="teatro">Teatro</option>
+          <option value="danca">Dança</option>
+          <option value="artes_visuais">Artes Visuais</option>
+          <option value="literatura">Literatura</option>
+          <option value="cinema">Cinema</option>
+          <option value="fotografia">Fotografia</option>
+          <option value="escultura">Escultura</option>
+          <option value="moda">Moda</option>
+          <option value="arquitetura">Arquitetura</option>
+          <option value="gastronomia">Gastronomia</option>
+          <option value="poesia">Poesia</option>
+          <option value="circense">Artes Circenses</option>
+          <option value="design_grafico">Design Gráfico</option>
+          <option value="artesanato">Artesanato</option>
+          <option value="musica_eletronica">Música Eletrônica</option>
+          <option value="performance">Performance</option>
+          <option value="ilustracao">Ilustração</option>
+          <option value="jogos_digitais">Jogos Digitais</option>
+          <option value="cultura_popular">Cultura Popular</option>
+          <option value="outra">Outra</option>
+</select>
+</fieldset>
+
+ <fieldset>
+        <legend>2. Justificativa e Descrição *(Obrigatório)*</legend>
+
+        <label for="numero_pleito">Número do Pleito: *(Obrigatório)*</label>
+        <input type="text" id="numero_pleito" name="numero_pleito" required>
+
+        <label for="resumo">Resumo e Justificativa do Projeto *(Obrigatório)*</label>
+        <input type="text" id="resumo" name="resumo" required>
+
+        <label for="justificativa">Descrição Detalhada:</label>
+        <textarea id="justificativa" name="justificativa" rows="8" placeholder="Descreva o projeto, relevância e objetivos."></textarea>
+</fieldset>
+
+<fieldset>
+        <legend>3. Anexos e Checklist de Documentos</legend>
+        <p class="checklist-info">Anexe para confirmar o envio dos documentos obrigatórios.</p>
+
+        <label for="docIdentificacao">Documento de Identificação (RG/CNPJ) *(Obrigatório)*</label>
+        <input type="file" id="docIdentificacao" name="doc_proponente" required>
+        <input type="checkbox" id="checkDoc" disabled>
+
+        <label for="planoTrabalho">Plano de Trabalho Detalhado *(Obrigatório)*</label>
+        <input type="file" id="planoTrabalho" name="plano_trabalho" required>
+        <input type="checkbox" id="checkPlano" disabled>
+
+        <label for="orcamento">Orçamento Detalhado (Planilha) *(Obrigatório)*</label>
+        <input type="file" id="orcamento" name="orcamento" required>
+        <input type="checkbox" id="checkOrcamento" disabled>
+
+        <label for="portfolio">Portfólio/Comprovação de Experiência (Opcional)</label>
+        <input type="file" id="portfolio" name="portifolio">
+        <input type="checkbox" id="checkPortfolio" disabled>
+</fieldset>
+
+<button type="submit">Cadastrar Pleito</button>
+
+</form>
+</section>
+</main>
+
+<script>
+document.getElementById('docIdentificacao').addEventListener('change', function() {
+	document.getElementById('checkDoc').checked = this.files.length > 0;
+});
+document.getElementById('planoTrabalho').addEventListener('change', function() {
+	document.getElementById('checkPlano').checked = this.files.length > 0;
+});
+document.getElementById('orcamento').addEventListener('change', function() {
+	document.getElementById('checkOrcamento').checked = this.files.length > 0;
+});
+document.getElementById('portfolio').addEventListener('change', function() {
+	document.getElementById('checkPortfolio').checked = this.files.length > 0;
+});
+
+document.getElementById('form-pleito').onsubmit = (e) => {
+	e.preventDefault();
+	alert('Seu pedido foi enviado! O número do seu protocolo é CULT-2025-12345.');
+};
+</script>
+
+</body>
+</html>
